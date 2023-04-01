@@ -275,9 +275,9 @@ class Helios:
         self.db.end()
 
         if self.options.outfile:
-            with open(self.options.outfile, 'w') as f:
-                f.write(json.dumps(scan_tree))
-                self.logger.info("Wrote results to %s" % self.options.outfile)
+            self.logger.info("returned %s" % self.options.outfile)
+            return json.dumps(scan_tree)
+
 
 
 
