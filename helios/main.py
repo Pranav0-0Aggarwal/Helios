@@ -5,7 +5,6 @@
 # This will start the helios framework
 
 import argparse
-import sys
 import helios
 
 
