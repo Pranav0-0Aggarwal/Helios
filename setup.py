@@ -11,7 +11,7 @@ setup(
     author='stefan2200',
     author_email='stefan@stefanvlems.nl',
     description='A Python based Web Application security scanner',
-    long_description=open(join(abspath(dirname(__file__)), "README.rst")).read(),
+    long_description=open(join(abspath(dirname(__file__)), "README.md")).read(),
     classifiers=[
         'Intended Audience :: Developers',
         'Intended Audience :: Information Technology',
