@@ -139,4 +139,4 @@ def main(url,scan_type):
 
 
 if __name__ == "__main__":
-    main()
+    return main()
