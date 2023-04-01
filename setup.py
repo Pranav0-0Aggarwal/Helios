@@ -2,11 +2,11 @@ from setuptools import setup
 from os.path import dirname, join, abspath
 
 setup(
-    name='Helios Scanner',
+    name='Helios-patched',
     version='1.1',
     packages=['helios', 'helios.ext', 'helios.ext.libcms', 'helios.ext.libcms.scanners', 'helios.ext.mefjus',
               'helios.ext.metamonster', 'helios.core', 'helios.webapp', 'helios.webapp.databases', 'helios.modules'],
-    url='https://github.com/stefan2200/Helios',
+    url='https://github.com/Pranav0-0Aggarwal/Helios',
     license='Apache 2.0',
     author='stefan2200',
     author_email='stefan@stefanvlems.nl',
