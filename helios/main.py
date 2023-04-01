@@ -6,13 +6,11 @@
 
 import argparse
 import sys
-
 import helios
 
 
-def main():
-    usage = """%s: args""" % sys.argv[0]
-    parser = argparse.ArgumentParser(usage)
+def main(url,scan_type):
+    parser = argparse.ArgumentParser("helios")
     parser.add_argument('-u', '--url', help='URL to start with', dest='url', default=None)
     parser.add_argument('--urls', help='file with URL\'s to start with', dest='urls', default=None)
     parser.add_argument('--user-agent', help='Set the user agent', dest='user_agent', default=None)
@@ -103,8 +101,17 @@ def main():
     group_msf.add_argument('--msf-nossl', help='Disable SSL', dest='msf_nossl', default=False)
     group_msf.add_argument('--msf-start', help='Start msfrpcd if not running already',
                            dest='msf_autostart', default=False, action='store_true')
+    
+    if(scan_type=="1"):
+        l=['-u',url,'-c','-s','-o','json']
+    elif(scan_type=="2"):
+        l=['-u',url,'-c','-s','--options','"discovery,passive"','--adv','-o','json']
+    elif(scan_type=="3"):
+        l=['-u',url,'-c','-s','-o','json','--options','all','--max-url','1000']
+    elif(scan_type=="4"):
+        l=['-u',url,'-s','-o','json']
 
-    opts = parser.parse_args(sys.argv[1:])
+    opts = parser.parse_args(l)
     urls = []
     if not opts.url:
         if not opts.urls:
